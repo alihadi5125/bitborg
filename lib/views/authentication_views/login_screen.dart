@@ -3,9 +3,9 @@ import 'package:bitborg/controllers/custom_widgets/app_buttons.dart';
 import 'package:bitborg/controllers/custom_widgets/status_bar_configuration.dart';
 import 'package:bitborg/models/custom_models/app_icons_icons.dart';
 import 'package:bitborg/models/custom_models/remove_scrollglow.dart';
+import 'package:bitborg/reset_password.dart';
 import 'package:bitborg/views/authentication_views/header.dart';
 import 'package:bitborg/views/authentication_views/sign_up_screen.dart';
-import 'package:bitborg/views/home_views/main_pageview_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -210,14 +210,19 @@ class LoginScreen extends StatelessWidget {
                 child: Container(
                   height: 40.sp,
                   alignment: Alignment.centerRight,
-                  child: Text(
-                    'Forgot Password ?',
-                    textAlign: TextAlign.end,
-                    style: TextStyle(
-                      fontFamily: 'Montserrat',
-                      color: AppColors.themeYellowColor,
-                      fontWeight: FontWeight.w700,
-                      fontSize: 15.sp,
+                  child: InkWell(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>ResetPassword()));
+                    },
+                    child: Text(
+                      'Forgot Password ?',
+                      textAlign: TextAlign.end,
+                      style: TextStyle(
+                        fontFamily: 'Montserrat',
+                        color: AppColors.themeYellowColor,
+                        fontWeight: FontWeight.w700,
+                        fontSize: 15.sp,
+                      ),
                     ),
                   ),
                 ),
